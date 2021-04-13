@@ -1,10 +1,12 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
-ThisBuild / organization := "io._2ne1ugly"
-ThisBuild / version := "0.0.1"
-ThisBuild / scalaVersion := "2.13.5"
+name := "me"
+scalaVersion := "2.13.4"
 
-lazy val site = (project in file("site"))
+enablePlugins(ScalaJSPlugin)
+
+lazy val root = (project in file("."))
+  .settings(name := "me")
   .enablePlugins(ScalaJSPlugin)
   .settings(
     scalacOptions ++= Seq(
@@ -17,7 +19,7 @@ lazy val site = (project in file("site"))
       "-language:implicitConversions",
       "-Ymacro-annotations"
     ),
-    libraryDependencies := Seq(
+    libraryDependencies ++= Seq(
       "com.raquo"     %%% "laminar"     % "0.12.2",
       "com.raquo"     %%% "airstream"   % "0.12.2",
       "io.laminext"   %%% "core"        % "0.12.3",
@@ -30,7 +32,3 @@ lazy val site = (project in file("site"))
     addCommandAlias("dev", ";~fastLinkJS"),
     scalaJSUseMainModuleInitializer := true
   )
-
-lazy val root = (project in file("."))
-  .settings(name := "me")
-  .aggregate(site)

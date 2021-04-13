@@ -1,5 +1,6 @@
 .bsp
 .idea
+.java-version
 dist
 node_modules
 target

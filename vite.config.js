@@ -17,7 +17,7 @@ export default ({ mode }) => {
     ],
     resolve: {
       alias: {
-        'stylesheets': resolve(__dirname, './public/css')
+        'stylesheets': resolve(__dirname, './stylesheets')
       }
     }
   }

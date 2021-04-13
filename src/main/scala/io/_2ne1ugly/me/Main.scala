@@ -1,8 +1,7 @@
-package io._2ne1ugly.site
+package io._2ne1ugly.me
 
 import com.raquo.laminar.api.L._
 import io.frontroute._
-
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
@@ -10,14 +9,13 @@ import scala.scalajs.js.annotation.JSImport
 @JSImport("stylesheets/main.css", JSImport.Namespace)
 object Css extends js.Any
 
-object SiteApp {
-
+object Main {
   val css: Css.type = Css
 
   def main(args: Array[String]): Unit = {
     val _ = documentEvents.onDomContentLoaded.foreach { _ =>
-      div()
+      LinkHandler.install()
+      Routes.start()
     }(unsafeWindowOwner)
   }
-
 }
