@@ -10,9 +10,7 @@ object Routes {
   private val (page, route) = makeRoute[Page] { render =>
 
     concat(
-      path("me") {
-        pathEnd { render(Page.Home) }
-      },
+      pathEnd(render(Page.Home)),
       render(Page.NotFound)
     )
   }
