@@ -8,6 +8,7 @@ export default ({ mode }) => {
   console.log('mainJS', mainJS)
   return {
     publicDir: './public',
+    base: "/me/",
     plugins: [
       injectHtml({
         injectData: {
