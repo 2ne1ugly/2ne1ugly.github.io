@@ -11,15 +11,23 @@ object PageWrap {
     val titleElement   = org.scalajs.dom.document.head.querySelector("title")
     val $pageAndResult = $page.map(_.map(p => p.render.runEither))
     div(
-      child <-- $pageAndResult.map {
-        case None => "loading..."
-        case Some(Left(error)) => s"Error: ${error.msg}"
-        case Some(Right(renderedPage)) => renderedPage.element
-      },
+      PageTop(),
+      div(
+        cls := "flex-1 flex p-4 min-h-screen",
+        div(
+          cls := "container mx-auto p-4 bg-white min-h-full",
+          child <-- $pageAndResult.map {
+            case None                      => "loading..."
+            case Some(Left(error))         => s"Error: ${error.msg}"
+            case Some(Right(renderedPage)) => renderedPage.element
+          }
+        )
+      ),
+      PageBottom(),
       $pageAndResult.bind {
-        case None =>
+        case None                      =>
           titleElement.textContent = "Loading..."
-        case Some(Left(error)) =>
+        case Some(Left(error))         =>
           titleElement.textContent = "errored :("
         case Some(Right(renderedPage)) =>
           titleElement.textContent = renderedPage.title

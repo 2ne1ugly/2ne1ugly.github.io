@@ -1,9 +1,11 @@
 package io._2ne1ugly.me
 
-import com.raquo.laminar.api.L._
-import io.frontroute._
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
+
+import com.raquo.laminar.api.L._
+import io.frontroute._
+import org.scalajs.dom
 
 @js.native
 @JSImport("stylesheets/main.css", JSImport.Namespace)

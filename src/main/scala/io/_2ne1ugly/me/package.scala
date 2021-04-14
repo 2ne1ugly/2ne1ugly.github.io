@@ -11,7 +11,10 @@ package object me {
   abstract class Page(val render: PageRender)
 
   object Page {
-    case object Home extends Page(pages.Home.render)
+    case object Home     extends Page(pages.Home.render)
+    case object Writings extends Page(pages.Writings.render)
+    case object Doings   extends Page(pages.Doings.render)
+    case object AboutMe  extends Page(pages.AboutMe.render)
     case object NotFound extends Page(pages.NotFound.render)
   }
 }

@@ -14,6 +14,6 @@ object Home {
       input(
         placeholder := "enter here"
       )
-    ).withTitle("Welcome :)")
+    ).withTitle("2ne1ugly's github")
   )
 }

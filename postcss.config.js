@@ -3,7 +3,9 @@ module.exports = () => {
     plugins: [
       require('postcss-import')({}),
       require('postcss-preset-env')({}),
-      require('tailwindcss')('./tailwind.config.js'),
+      process.env.NODE_ENV === 'production' ?
+        require('tailwindcss')('./tailwind.prod.config.js') :
+        require('tailwindcss')('./tailwind.dev.config.js'),
     ]
   };
 }

@@ -1,4 +1,4 @@
-import org.scalajs.linker.interface.ModuleSplitStyle
+import org.scalajs.linker.interface.{ModuleInitializer, ModuleSplitStyle}
 
 name := "me"
 scalaVersion := "2.13.4"
@@ -30,5 +30,6 @@ lazy val root = (project in file("."))
     scalaJSLinkerConfig ~= { _.withModuleSplitStyle(ModuleSplitStyle.FewestModules) },
     scalaJSLinkerConfig ~= { _.withSourceMap(false) },
     addCommandAlias("dev", ";~fastLinkJS"),
-    scalaJSUseMainModuleInitializer := true
+    scalaJSUseMainModuleInitializer := true,
+    scalaJSMainModuleInitializer := Some(ModuleInitializer.mainMethod("io._2ne1ugly.me.main.Main", "main"))
   )
