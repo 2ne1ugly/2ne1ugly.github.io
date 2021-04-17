@@ -33,7 +33,7 @@ object PageTop {
               href := "/doings",
               "doings"
             ),
-            button(
+            a(
               cls := "border-b-2 border-transparent font-display",
               cls := "hover:border-gray-500 hover:text-black",
               href := "/about-me",

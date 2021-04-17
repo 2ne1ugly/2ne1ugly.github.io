@@ -12,7 +12,7 @@ object Routes {
       pathEnd(render(Page.Home)),
       path("writings")(render(Page.Writings)),
       path("doings")(render(Page.Doings)),
-      path("about me")(render(Page.AboutMe)),
+      path("about-me")(render(Page.AboutMe)),
       render(Page.NotFound)
     )
   }
